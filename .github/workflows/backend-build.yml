@@ -36,6 +36,7 @@ jobs:
           cache: 'maven'
 
       - name: Build & Test
+        working-directory: ./congreso-espirita
         env:
           SPRING_PROFILES_ACTIVE: dev
           SPRING_DATASOURCE_URL: jdbc:mysql://127.0.0.1:3306/congreso_espirita
@@ -48,4 +49,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: test-reports
-          path: target/surefire-reports/
+          path: ./congreso-espirita/target/surefire-reports/
