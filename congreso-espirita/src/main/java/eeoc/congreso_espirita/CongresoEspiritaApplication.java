@@ -1,13 +1,13 @@
-package eeoc.congreso.espirita;
+package eeoc.congreso_espirita;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CongresoApplication {
+public class CongresoEspiritaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CongresoApplication.class, args);
+		SpringApplication.run(CongresoEspiritaApplication.class, args);
 	}
 
 }

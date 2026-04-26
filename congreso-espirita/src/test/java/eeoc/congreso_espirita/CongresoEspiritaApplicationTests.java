@@ -1,10 +1,10 @@
-package eeoc.congreso.espirita;
+package eeoc.congreso_espirita;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CongresoApplicationTests {
+class CongresoEspiritaApplicationTests {
 
 	@Test
 	void contextLoads() {
