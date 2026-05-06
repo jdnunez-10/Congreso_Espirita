@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import eeoc.congreso_espirita.Entity.CheckIn;
 
 @Repository
-public interface CheckInRepository extends JpaRepository<CheckIn, String> {
+public interface CheckInRepository extends JpaRepository<CheckIn, Long> {
 
     Optional<CheckIn> findByTicketIdAndDayNumber(String ticketId, Integer dayNumber);
     

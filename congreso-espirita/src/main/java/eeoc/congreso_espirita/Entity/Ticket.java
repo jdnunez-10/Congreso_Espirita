@@ -34,14 +34,14 @@ public class Ticket {
     private String id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = true)
     private User user;
 
     @ManyToOne
     @JoinColumn(name = "event_id", nullable = false)
     private Event event;
 
-    @Column(name = "qr_token", nullable = false, unique = true, length = 191)
+    @Column(name = "qr_token", nullable = true, unique = true, length = 191)
     private String qrToken;
 
     @Enumerated(EnumType.STRING)
@@ -54,11 +54,20 @@ public class Ticket {
     @Column(nullable = false)
     private String currency;
 
+    @Column(name = "reserved_until")
+    private LocalDateTime reservedUntil;
+
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
     @OneToMany(mappedBy = "ticket")
     private List<Payment> payments;
+
+    @Column(name = "attendee_name")
+    private String attendeeName;
+
+    @Column(name = "attendee_email")
+    private String attendeeEmail;
 
     @OneToMany(mappedBy = "ticket")
     private List<CheckIn> checkIns;

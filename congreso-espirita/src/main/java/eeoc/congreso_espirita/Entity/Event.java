@@ -1,5 +1,6 @@
 package eeoc.congreso_espirita.Entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -21,7 +22,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Event {
-@Id
+    @Id
     @Column(length = 36)
     private String id;
 
@@ -39,5 +40,14 @@ public class Event {
 
     @OneToMany(mappedBy = "event")
     private List<Ticket> tickets;
+
+    @Column(name = "total_capacity", nullable = false)
+    private Integer totalCapacity;
+
+    @Column(name = "ticket_price", nullable = false)
+    private BigDecimal ticketPrice;
+
+    @Column(nullable = false, length = 3)
+    private String currency; // "HNL"
 }    
 
